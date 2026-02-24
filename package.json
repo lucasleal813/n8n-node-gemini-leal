@@ -1,0 +1,25 @@
+{
+  "name": "n8n-nodes-gemini-dynamic",
+  "version": "1.0.0",
+  "description": "Google Gemini com chave dinâmica para AI Agent",
+  "main": "dist/GoogleGeminiDynamic.node.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "n8n-community-node-package"
+  ],
+  "n8n": {
+    "nodes": [
+      "dist/GoogleGeminiDynamic.node.js"
+    ]
+  },
+  "dependencies": {
+    "@langchain/google-genai": "^0.0.22"
+  },
+  "devDependencies": {
+    "n8n-workflow": "^1.0.0",
+    "typescript": "^4.5.0",
+    "@types/node": "^18.0.0"
+  }
+}
