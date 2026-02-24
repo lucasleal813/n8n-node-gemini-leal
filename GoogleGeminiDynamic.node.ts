@@ -47,18 +47,19 @@ export class GoogleGeminiDynamic implements INodeType {
 		],
 	};
 
-	async execute(this: any): Promise<any> {
+async supplyData(this: any): Promise<any> {
 		const apiKey = this.getNodeParameter('apiKey', 0) as string;
 		const modelName = this.getNodeParameter('model', 0) as string;
 		const temperature = this.getNodeParameter('temperature', 0) as number;
 
 		const model = new ChatGoogleGenerativeAI({
 			apiKey: apiKey,
-			model: modelName, // Corrigido para 'model'
+			model: modelName,
 			temperature: temperature,
 		});
 
-		// Retorna a instância para o Agente de IA
-		return this.prepareOutputData([{ json: { model } }]);
+		return {
+			response: model,
+		};
 	}
 }

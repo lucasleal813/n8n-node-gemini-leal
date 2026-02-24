@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GoogleGeminiDynamic = void 0;
 const google_genai_1 = require("@langchain/google-genai");
+
 class GoogleGeminiDynamic {
     constructor() {
         this.description = {
@@ -45,7 +46,8 @@ class GoogleGeminiDynamic {
             ],
         };
     }
-    async execute() {
+    // Método supplyData é o que o AI Agent usa para identificar o modelo
+    async supplyData() {
         const apiKey = this.getNodeParameter('apiKey', 0);
         const modelName = this.getNodeParameter('model', 0);
         const temperature = this.getNodeParameter('temperature', 0);
@@ -54,7 +56,9 @@ class GoogleGeminiDynamic {
             model: modelName,
             temperature: temperature,
         });
-        return this.prepareOutputData([{ json: { model } }]);
+        return {
+            response: model,
+        };
     }
 }
 exports.GoogleGeminiDynamic = GoogleGeminiDynamic;
