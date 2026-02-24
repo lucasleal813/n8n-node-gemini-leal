@@ -1,12 +1,8 @@
 {
   "name": "n8n-nodes-gemini-leal",
-  "version": "1.0.1",
-  "description": "Google Gemini com chave dinâmica para AI Agent",
+  "version": "1.0.3",
+  "description": "Google Gemini dinâmico",
   "main": "dist/GoogleGeminiDynamic.node.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/lucasleal813/n8n-node-gemini-leal.git"
-  },
   "n8n": {
     "nodes": [
       "dist/GoogleGeminiDynamic.node.js"
